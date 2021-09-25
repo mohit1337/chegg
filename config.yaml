@@ -1,0 +1,21 @@
+#Pushbullet api token to send notfications
+pushbullet_token:
+    o.0UaqLfqo5HbpulvFrJlsXnBYlbNXOZ
+
+#Skip questions with words > below len
+skip_len:
+    1000
+
+#Words to filter/stop at
+ignore_words:
+    - java
+    - c++
+    - scala
+    - cobol
+    - matlab
+    - assembly
+fav_words:
+    - python
+    - sed
+    - awk
+    - bash

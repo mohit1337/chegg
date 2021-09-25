@@ -1,0 +1,9 @@
+#login
+username_input:
+    id: 1-email
+password_input:
+    xpath: //input[@type="password"]
+login_button:
+    xpath: //button[@class="auth0-lock-submit"]
+
+#qna

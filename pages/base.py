@@ -15,7 +15,7 @@ class Base(object):
         with open(locators_file) as f:
             self.locators = yaml.load(f, Loader=yaml.FullLoader)
 
-    def fill_form(selector, selector_value, value, timeout=5):
+    def fill_form(self, selector, selector_value, value, timeout=5):
         webdriver = WebDriverWait(self.driver, timeout)
         if selector == 'id':
             elem = webdriver.until(EC.visibility_of_element_located(
@@ -23,8 +23,10 @@ class Base(object):
         elif selector == 'xpath':
             elem = webdriver.until(EC.visibility_of_element_located(
                         (By.XPATH, selector_value)))
+        elem.clear()
+        elem.send_keys(value)
 
-    def click(selector, selector_value, value, timeout=5):
+    def click(self, selector, selector_value, timeout=5):
         webdriver = WebDriverWait(self.driver, timeout)
         if selector == 'id':
             elem = webdriver.until(EC.visibility_of_element_located(
